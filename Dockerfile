@@ -6,11 +6,11 @@ WORKDIR /temp
 # Option 1: Provide CLI arg FOUNDRY_URL={url}
 #  - URL can be retrieved from Foundry website in account information
 #  - URL is temporary (5 mins)
-RUN curl ${FOUNDRY_URL} -o foundry.zip
+#RUN curl ${FOUNDRY_URL} -o foundry.zip
 
 # Option 2: Provide foundry.zip directly
 #  - Place foundry.zip file in same directory as this file
-# COPY foundry.zip .
+COPY foundry.zip .
 
 WORKDIR /app/foundry
 RUN unzip /temp/foundry.zip
